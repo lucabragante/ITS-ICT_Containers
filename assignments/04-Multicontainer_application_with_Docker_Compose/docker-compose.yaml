@@ -1,0 +1,29 @@
+---
+version: "3"
+services:
+  wordpress:
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    image: wordpress
+    networks:
+      - frontend
+      - backend
+    ports:
+      - 8000:80
+    depends_on:
+      - mysql
+  mysql:
+    environment:
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    image: mysql:5.7
+    networks:
+      - backend
+networks:
+  frontend:
+  backend:
