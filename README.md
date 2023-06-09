@@ -1,5 +1,3 @@
-
-suca
 # ITS-ICT Containers
 
 
