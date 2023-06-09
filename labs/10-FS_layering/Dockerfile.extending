@@ -1,2 +1,4 @@
 FROM expressweb
+
+LABEL ciao="ciao"
 CMD [ "npm", "start" ]
